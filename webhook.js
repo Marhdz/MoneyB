@@ -6,8 +6,8 @@ const server = Restify.createServer({
 const request = require('request');
 const PORT = process.env.PORT || 3000;
 
-server.use(Restify.bodyParser());
-server.use(Restify.jsonp());
+server.use(Restify.login.bodyParser());
+server.use(Restify.login.jsonp());
 
 const convertCurrency = (amountToConvert, outputCurrency, cb) => {
   const {
